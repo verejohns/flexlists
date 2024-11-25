@@ -1,0 +1,16 @@
+@import "@/themes/styles/variables.scss";
+.widget {
+  height: 100%;
+  position: relative;
+  background: #fff;
+  cursor: move;
+
+  .frame {
+    padding: 8px 4px;
+    height: 100%;
+    box-sizing: border-box;
+  }
+  &.widgetActive {
+    background: map_get($color-secondary, 200);
+  }
+}

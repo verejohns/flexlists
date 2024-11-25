@@ -1,0 +1,20 @@
+version: "3"
+
+services:
+  maindb:
+    image: mariadb
+    container_name: maindb
+    restart: always
+    command:
+      [
+        '--lower_case_table_names=1',
+        '--innodb_page_size=64k',
+        '--innodb_log_buffer_size=32M',
+        '--innodb_buffer_pool_size=512M'
+      ]
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - "./mysql:/var/lib/mysql"
+    ports:
+      - "127.0.0.1:3306:3306"

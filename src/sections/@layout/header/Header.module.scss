@@ -1,0 +1,13 @@
+.toolbar {
+  justify-content: space-between;
+  min-height: 48px;
+
+  .btnNav {
+    min-width: 40px;
+  }
+}
+@media (min-width: 600px) {
+  div.toolbar {
+    min-height: 48px;
+  }
+}

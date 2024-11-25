@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# # if not exists ../flexlists-api-client-ts, then clone git@github.com:Flexlists/Flexlists-API-Client-TS.git in .. 
+# if [ ! -d "../flexlists-api-client-ts" ]; then
+#     cd ..
+#     git clone git@github.com:Flexlists/Flexlists-API-Client-TS.git
+#     yarn
+#     cd - 
+# fi
+
+cd ../Flexlists-API-Client-TS
+# git stash 
+# git pull 
+yarn
+yarn build 
+cd -
+
+rm -fR .next 
+rm -fR node_modules/flexlists-api 
+mkdir node_modules/flexlists-api 
+
+cp -r ../Flexlists-API-Client-TS/dist node_modules/flexlists-api
+cp ../Flexlists-API-Client-TS/package.json node_modules/flexlists-api

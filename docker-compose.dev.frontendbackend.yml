@@ -1,0 +1,16 @@
+version: '3.1'
+
+services:
+
+  web:
+    image: nginx
+    restart: always 
+    volumes:
+      - ./templates-frontendbackend:/etc/nginx/templates
+    ports:
+      - "127.0.0.1:8080:80"
+    environment:
+      - NGINX_HOST=noco1.com
+      - NGINX_PORT=80
+    extra_hosts:
+      - "host.docker.internal:host-gateway"

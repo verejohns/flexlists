@@ -1,0 +1,1 @@
+export { default as CarouselControlsArrowsBasic2 } from './CarouselControlsArrowsBasic2';
